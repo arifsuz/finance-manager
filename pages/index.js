@@ -76,20 +76,24 @@ export default function Home() {
       Description: transaction.description,
       Date: new Date(transaction.created_at).toLocaleDateString('id-ID'),
     }));
-  
+
     const worksheet = XLSX.utils.json_to_sheet(formattedTransactions);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
-  
+
     XLSX.writeFile(workbook, `Transactions_Report_${new Date().toLocaleDateString('id-ID')}.xlsx`);
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="container">
       <h1>Financial Manager</h1>
-      <h2>Total Savings: {formatCurrency(totalSavings)}</h2>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div className="summary">
+        <h2>Total Savings</h2>
+        <p className="total-savings">{formatCurrency(totalSavings)}</p>
+      </div>
+
+      <div className="form-section">
         <input
           type="number"
           placeholder="Amount"
@@ -107,18 +111,19 @@ export default function Home() {
           onChange={(e) => setDescription(e.target.value)}
         />
         <button onClick={handleAddTransaction}>Add Transaction</button>
-
-        {/* Button to download Excel report */}
-        <button onClick={handleDownloadExcel} style={{ marginTop: '20px' }}>
-          Download Report as Excel
-        </button>
       </div>
 
+      <button onClick={handleDownloadExcel} className="download-button">
+        Download Report as Excel
+      </button>
+
       <h2>Transaction History</h2>
-      <ul>
+      <ul className="transaction-list">
         {transactions.map((transaction) => (
-          <li key={transaction.id}>
-            <strong>{transaction.type === 'income' ? '+' : '-'}</strong> {formatCurrency(transaction.amount)} - {transaction.description} (on {new Date(transaction.created_at).toLocaleString()})
+          <li key={transaction.id} className={`transaction-item ${transaction.type}`}>
+            <span className="transaction-amount">{formatCurrency(transaction.amount)}</span>
+            <span className="transaction-description">{transaction.description}</span>
+            <span className="transaction-date">{new Date(transaction.created_at).toLocaleDateString('id-ID')}</span>
           </li>
         ))}
       </ul>

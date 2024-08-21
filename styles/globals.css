@@ -1,38 +1,137 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f8fa;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #0070f3;
+  margin-bottom: 20px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #0070f3;
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.total-savings {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 input, select, button {
-  margin-right: 10px;
+  flex: 1 1 calc(33.333% - 20px);
   padding: 10px;
   font-size: 16px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
 }
 
 button {
   background-color: #0070f3;
   color: #fff;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #005bb5;
+}
+
+.download-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+  background-color: #28a745;
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.transaction-item.income .transaction-amount {
+  color: #28a745;
+}
+
+.transaction-item.expense .transaction-amount {
+  color: #dc3545;
+}
+
+.transaction-amount, .transaction-description, .transaction-date {
+  flex: 1;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-section {
+    flex-direction: column;
+  }
+
+  .form-section input, .form-section select, .form-section button {
+    flex: 1 1 100%;
+  }
+  
+  .summary {
+    flex-direction: column;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transaction-amount, .transaction-description, .transaction-date {
+    flex: none;
+    width: 100%;
+    margin-bottom: 5px;
+  }
 }
