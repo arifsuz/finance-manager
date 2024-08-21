@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import * as XLSX from 'xlsx';
 
 export default function Home() {
   const [amount, setAmount] = useState('');
@@ -66,6 +67,22 @@ export default function Home() {
     }).format(amount);
   };
 
+  // Function to convert transactions to Excel and download
+  const handleDownloadExcel = () => {
+    const formattedTransactions = transactions.map((transaction) => ({
+      ID: transaction.id,
+      Amount: transaction.amount,
+      Type: transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1),
+      Description: transaction.description,
+      Date: new Date(transaction.created_at).toLocaleDateString('id-ID'),
+    }));
+  
+    const worksheet = XLSX.utils.json_to_sheet(formattedTransactions);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
+  
+    XLSX.writeFile(workbook, `Transactions_Report_${new Date().toLocaleDateString('id-ID')}.xlsx`);
+  };
 
   return (
     <div style={{ padding: '20px' }}>
@@ -90,6 +107,11 @@ export default function Home() {
           onChange={(e) => setDescription(e.target.value)}
         />
         <button onClick={handleAddTransaction}>Add Transaction</button>
+
+        {/* Button to download Excel report */}
+        <button onClick={handleDownloadExcel} style={{ marginTop: '20px' }}>
+          Download Report as Excel
+        </button>
       </div>
 
       <h2>Transaction History</h2>
