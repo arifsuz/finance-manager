@@ -58,10 +58,19 @@ export default function Home() {
     }
   };
 
+  // Function to format numbers as currency in IDR
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+    }).format(amount);
+  };
+
+
   return (
     <div style={{ padding: '20px' }}>
       <h1>Financial Manager</h1>
-      <h2>Total Savings: ${totalSavings}</h2>
+      <h2>Total Savings: {formatCurrency(totalSavings)}</h2>
 
       <div style={{ marginBottom: '20px' }}>
         <input
@@ -87,7 +96,7 @@ export default function Home() {
       <ul>
         {transactions.map((transaction) => (
           <li key={transaction.id}>
-            <strong>{transaction.type === 'income' ? '+' : '-'}</strong> ${transaction.amount} - {transaction.description} (on {new Date(transaction.created_at).toLocaleString()})
+            <strong>{transaction.type === 'income' ? '+' : '-'}</strong> {formatCurrency(transaction.amount)} - {transaction.description} (on {new Date(transaction.created_at).toLocaleString()})
           </li>
         ))}
       </ul>
