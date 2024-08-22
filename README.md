@@ -49,7 +49,7 @@ You can start editing the page by modifying [`pages/index.js`](command:_github.c
 
 ### Database Integration with Supabase
 
-This project uses Supabase for database integration. The configuration and client setup are handled in [`lib/supabaseClient.js`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2Flib%2FsupabaseClient.js%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "/workspaces/finance-manager/lib/supabaseClient.js").
+This project uses Supabase for database integration. The configuration and client setup are handled in [`lib/supabaseClient.js`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2Flib%2FsupabaseClient.js%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22lib%2FsupabaseClient.js%22%5D "/workspaces/finance-manager/lib/supabaseClient.js").
 
 #### Setting Up Supabase
 
@@ -58,7 +58,7 @@ This project uses Supabase for database integration. The configuration and clien
 
 #### Configuring Supabase Client
 
-Create a file named [`lib/supabaseClient.js`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2Flib%2FsupabaseClient.js%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "/workspaces/finance-manager/lib/supabaseClient.js") and add the following code:
+Create a file named [`lib/supabaseClient.js`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2Flib%2FsupabaseClient.js%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22lib%2FsupabaseClient.js%22%5D "/workspaces/finance-manager/lib/supabaseClient.js") and add the following code:
 
 ```javascript
 // lib/supabaseClient.js
@@ -70,7 +70,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
 export const supabase = createClient(supabaseUrl, supabaseKey);
 ```
 
-Ensure you have the environment variables set in your [`.env.local`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2F.env.local%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "/workspaces/finance-manager/.env.local") file:
+Ensure you have the environment variables set in your [`.env.local`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2F.env.local%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22.env.local%22%5D "/workspaces/finance-manager/.env.local") file:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
@@ -79,7 +79,7 @@ NEXT_PUBLIC_SUPABASE_KEY=your-supabase-key
 
 #### Using Supabase Client in API Routes
 
-You can use the Supabase client in your API routes to interact with the database. For example, in `pages/api/hello.js`:
+You can use the Supabase client in your API routes to interact with the database. For example, in [`pages/api/hello.js`](command:_github.copilot.openSymbolFromReferences?%5B%22pages%2Fapi%2Fhello.js%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A47%2C%22character%22%3A46%7D%7D%5D%5D "Go to definition"):
 
 ```javascript
 // pages/api/hello.js
@@ -120,10 +120,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Contributing
 
 1. Fork the repository.
-2. Create a new branch ([`git checkout -b feature-branch`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20checkout%20-b%20feature-branch%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A77%2C%22character%22%3A29%7D%7D%5D%5D "Go to definition")).
+2. Create a new branch ([`git checkout -b feature-branch`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20checkout%20-b%20feature-branch%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A122%2C%22character%22%3A30%7D%7D%5D%5D "Go to definition")).
 3. Make your changes.
-4. Commit your changes ([`git commit -m 'Add some feature'`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20commit%20-m%20'Add%20some%20feature'%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A79%2C%22character%22%3A29%7D%7D%5D%5D "Go to definition")).
-5. Push to the branch ([`git push origin feature-branch`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20push%20origin%20feature-branch%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A77%2C%22character%22%3A41%7D%7D%5D%5D "Go to definition")).
+4. Commit your changes ([`git commit -m 'Add some feature'`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20commit%20-m%20'Add%20some%20feature'%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A124%2C%22character%22%3A30%7D%7D%5D%5D "Go to definition")).
+5. Push to the branch ([`git push origin feature-branch`](command:_github.copilot.openSymbolFromReferences?%5B%22git%20push%20origin%20feature-branch%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A122%2C%22character%22%3A42%7D%7D%5D%5D "Go to definition")).
 6. Open a pull request.
 
 ## 👨‍💻 Authors
