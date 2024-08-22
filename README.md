@@ -79,7 +79,7 @@ NEXT_PUBLIC_SUPABASE_KEY=your-supabase-key
 
 #### Using Supabase Client in API Routes
 
-You can use the Supabase client in your API routes to interact with the database. For example, in [`pages/api/hello.js`](command:_github.copilot.openSymbolFromReferences?%5B%22pages%2Fapi%2Fhello.js%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A47%2C%22character%22%3A46%7D%7D%5D%5D "Go to definition"):
+You can use the Supabase client in your API routes to interact with the database. For example, in [`pages/api/api.js`](command:_github.copilot.openSymbolFromReferences?%5B%22pages%2Fapi%2Fhello.js%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22external%22%3A%22file%3A%2F%2F%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22path%22%3A%22%2Fworkspaces%2Ffinance-manager%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A47%2C%22character%22%3A46%7D%7D%5D%5D "Go to definition"):
 
 ```javascript
 // pages/api/api.js
